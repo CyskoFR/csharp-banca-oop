@@ -29,7 +29,7 @@ using System;
 
 Bank bancaIntesa = new Bank("Intesa San Paolo");
 
-Console.WriteLine("Software Gestionale Bank {0}" + bancaIntesa.Nome);
+Console.WriteLine("Software Gestionale Bank " + bancaIntesa.Nome);
 Console.WriteLine();
 
 bool running = true;
@@ -42,9 +42,9 @@ while (running)
     Console.WriteLine("3. Ricerca cliente");
     Console.WriteLine("4. Ricerca prestito cliente");
     Console.WriteLine("5. Aggiungi un prestito");
-
     Console.WriteLine();
-    Console.Write("Cosa vuoi fare?: ");
+
+    Console.Write("Cosa vuoi fare? ");
     int choice = Convert.ToInt32(Console.ReadLine());
 
     switch (choice)
@@ -54,13 +54,11 @@ while (running)
             Console.WriteLine("Inserisci il codice fiscale del cliente:");
             string codiceFiscale = Console.ReadLine();
 
-
             Client clienteEsistente = bancaIntesa.SearchClient(codiceFiscale);
 
             if (clienteEsistente != null)
             {
                 Console.WriteLine("Attenzione! Il cliente è già stato inserito!");
-
             }
             else
             {
@@ -70,8 +68,8 @@ while (running)
                 Console.WriteLine("Il cliente è stato inserito correttamente");
             }
 
-
             break;
+
         case 2:
 
             Console.WriteLine("Inserisci il codice fiscale del cliente:");
@@ -81,9 +79,7 @@ while (running)
 
             if (clienteEsistente == null)
             {
-
                 Console.WriteLine("Attenzione! non è stato trovato alcun cliente, cambia i criteri di ricerca");
-
             }
             else
             {
@@ -98,9 +94,8 @@ while (running)
                 Console.WriteLine("Il cliente è stato modificato correttamente");
             }
 
-
-
             break;
+
         case 3:
 
             Console.WriteLine("Inserisci il codice fiscale del cliente:");
@@ -110,9 +105,7 @@ while (running)
 
             if (clienteEsistente == null)
             {
-
                 Console.WriteLine("Attenzione! non è stato trovato alcun cliente, cambia i criteri di ricerca");
-
             }
             else
             {
@@ -121,6 +114,7 @@ while (running)
             }
 
             break;
+
         case 4:
 
             Console.WriteLine("Inserisci il codice fiscale del cliente:");
@@ -135,7 +129,6 @@ while (running)
             foreach (Loan loan in loans)
             {
                 totalAmount += loan.Amount;
-
             }
 
             Console.WriteLine("Totale ammontare prestiti concessi: {0}", totalAmount);
@@ -143,9 +136,7 @@ while (running)
             foreach (Loan loan in loans)
             {
                 Console.WriteLine("Per il prestito {0}, rimangono {1} rate da pagare.", loan.ID, loan.PaymentLeft());
-
             }
-
 
             break;
 
@@ -158,9 +149,7 @@ while (running)
 
             if (clienteEsistente == null)
             {
-
                 Console.WriteLine("Attenzione! non è stato trovato alcun cliente, cambia i criteri di ricerca");
-
             }
             else
             {
@@ -180,8 +169,6 @@ while (running)
                 bancaIntesa.AddLoan(newLoan);
 
             }
-
-
 
             break;
     }

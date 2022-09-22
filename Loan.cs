@@ -37,7 +37,6 @@
 
     public int PaymentLeft()
     {
-
         TimeSpan span = End.Subtract(DateTime.Today);
 
         return (int)(span.Days / (365.25 / 12));

@@ -7,7 +7,6 @@
 
     public Client(string codiceFiscale)
     {
-
         FiscalCode = codiceFiscale;
         Salary = 0;
         Name = null;
@@ -21,10 +20,8 @@
         Salary = stipendio;
     }
 
-
     public override string ToString()
     {
-
         return $"{this.Name}\t{this.Surname}\t{this.FiscalCode}\t{this.Salary}";
     }
 
